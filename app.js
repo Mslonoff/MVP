@@ -2,20 +2,29 @@
 import express from 'express';
 import path from 'path';
 import pg from 'pg';
+import 'dotenv/config';
+
 const { Pool } = pg;
 const app = express();
 const expressPort = 8005;
-const pool = new Pool({
-    user: "matthewslonoff",
-    password: "slonoff4",
-    host: 'localhost',
-    database: 'vehiclesdb',
-    port: 5432,
-});
+
+// const pool = new Pool({
+//     user: "matthewslonoff",
+//     password: "slonoff4",
+//     host: 'localhost',
+//     database: 'vehiclesdb',
+//     port: 5432,
+// });
+
+const connectionString = process.env.PG_DATABASE_URL; // hide to prevent hacking?
+console.log(connectionString);
+const pool = new Pool ({
+    connectionString,
+})
 
 // middleware
-app.use(express.json());
 app.use(express.static('public'));
+app.use(express.json());
 
 // create CRUD routes
 app.get('/api/vehicles', (req, res) => { // good to go

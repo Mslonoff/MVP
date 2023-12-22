@@ -8,7 +8,19 @@
     </head>
     <body>
     <div id="main">
-        <p>Welcome to the Hinsdale Police Department Vehicles Database</p>
+        <h1>Welcome to the Hinsdale Police Department Vehicles Database</h1>
+        <p>Please enter the vehicle's license plate below</p>
+        <form id="vehicleUser-form">
+            <input type="text" name="search" id="vehicleSearch">
+            <button id="submit">Search</button>
+        </form>
+        <p>Please enter the owner's ID number below</p>
+        <form id="ownerUser-form">
+            <input type="text" name="search" id="ownerSearch">
+            <button id="submit">Search</button>
+        </form>
+        <div id="vehicleResults"></div>
+        <div id="ownerResults"></div>
     </div>
     </body>
 </html>
