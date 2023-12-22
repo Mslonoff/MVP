@@ -18,13 +18,23 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // create CRUD routes
-app.get('/api/vehicles', (req, res) => {
+app.get('/api/vehicles', (req, res) => { // good to go
     pool
     .query('SELECT * FROM vehicles')
     .then((result) => res.status(201).send(result.rows))
     .catch((error) => {
         console.error(error);
         res.status(500).send('Sorry your vehicles not found');
+    });
+});
+
+app.get('/api/owners', (req, res) => { // good to go
+    pool
+    .query('SELECT * FROM owners')
+    .then((result) => res.status(201).send(result.rows))
+    .catch((error) => {
+        console.error(error);
+        res.status(500).send('Sorry your owners not found');
     });
 });
 
