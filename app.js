@@ -38,6 +38,22 @@ app.get('/api/owners', (req, res) => { // good to go
     });
 });
 
+app.get('/api/vehicles/:id', (req, res) => { // good to go
+    const { id } = req.params;
+    pool.query('SELECT * FROM vehicles WHERE id=$1', [id])
+    .then((result) => {
+        if (result.rows.length > 0) {
+            res.status(200).send(result.rows)
+        } else {
+            res.status(404).send('Sorry cannot find vehicle');
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    });
+});
+
 app.listen(expressPort, () => {
     console.log(`Listening on port ${expressPort}...`);
 });
