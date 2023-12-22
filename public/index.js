@@ -3,27 +3,6 @@ let $ownerResults = $('#ownerResults');
 let $vehicleUserForm = $('#vehicleUser-form');
 let $userSearch = $('#vehicleSearch');
 
-// let vehiclesArr = [];
-
-// const fetchVehicleInfo = (url) => {
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(vehicles => {
-//         vehicles.forEach(vehicle => vehiclesArr.push(vehicle))
-//         renderVehicleList(vehiclesArr)
-//     })
-// }
-
-// function getExactVehicle() {
-//     $.get('/api/vehicles', function(data) {
-//         for (let i = 0; i < data.length; i++) {
-//             let currentVehicle = data[i];
-//             let licensePlate = currentVehicle.licenseplate;
-//             console.log(licensePlate);
-//         }
-//     })
-// }
-
 $vehicleUserForm.on('submit', async (event) => {
     event.preventDefault();
     $vehicleResults.empty();
@@ -44,7 +23,7 @@ $vehicleUserForm.on('submit', async (event) => {
 
             $currentVehicleInfo.append($vehicleId, $vehicleColor, $licensePlate, $vehicleMake, $model, $year, $ownerId);
             $vehicleResults.append($currentVehicleInfo);
-        //}
+
     } catch (error) {
         console.error(error);
     }
