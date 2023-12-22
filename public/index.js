@@ -11,7 +11,6 @@ $vehicleUserForm.on('submit', (event) => {
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             let currentVehicle = data[i];
-            console.log(currentVehicle);
     
             let $currentVehicleInfo = $('<span class="currentVehicleInfo"></span>');
             let $vehicleId = $(`<span class="vehicleId">ID: ${currentVehicle.id} </span>`);
@@ -41,7 +40,6 @@ $ownerUserForm.on('submit', (event) => {
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             let currentOwner = data[i];
-            console.log(currentOwner);
     
             let $currentOwnerInfo = $('<span class="currentOwnerInfo"></span>');
             let $id = $(`<span class="id">ID: ${currentOwner.id} </span>`);
