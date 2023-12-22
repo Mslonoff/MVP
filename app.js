@@ -54,7 +54,7 @@ app.get('/api/vehicles/:id', (req, res) => { // good to go
     });
 });
 
-app.get('/api/owners/:id', (req, res) => {
+app.get('/api/owners/:id', (req, res) => { // good to go
     const { id } = req.params;
     pool.query('SELECT * FROM owners WHERE id=$1', [id])
     .then((result) => {
