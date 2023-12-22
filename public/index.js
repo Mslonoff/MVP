@@ -7,13 +7,15 @@ $.get('/api/vehicles', function(data) {
         console.log(currentVehicle);
 
         let $currentVehicleInfo = $('<span class="currentVehicleInfo"></span>');
-        let $vehicleId = $(`<span class="vehicleId">'ID: '${currentVehicle.id}</span>`);
-        let $vehicleColor = $(`<span class="vehicleColor">'Color: '${currentVehicle.color}</span>`);
-        let $licensePlate = $(`<span class="licensePlate">'License Plate: '${currentVehicle.licenseplate}</span>`);
-        let $vehicleMake = $(`<span class="vehicleMaker">'Vehicle Make: '${currentVehicle.make}</span>`);
-        let $model = $(`<span class="model">'Model: '${currentVehicle.model}</span>`);
-        let $year = $(`<span class="year">'Year: '${currentVehicle.year}</span>`);
-        $currentVehicleInfo.append($vehicleId, $vehicleColor, $licensePlate, $vehicleMake, $model, $year);
+        let $vehicleId = $(`<span class="vehicleId">ID: ${currentVehicle.id}</span>`);
+        let $vehicleColor = $(`<span class="vehicleColor">Color: ${currentVehicle.color}</span>`);
+        let $licensePlate = $(`<span class="licensePlate">License Plate: ${currentVehicle.licenseplate}</span>`);
+        let $vehicleMake = $(`<span class="vehicleMake">Vehicle Make: ${currentVehicle.make}</span>`);
+        let $model = $(`<span class="model">Model: ${currentVehicle.model}</span>`);
+        let $year = $(`<span class="year">Year: ${currentVehicle.modelyear}</span>`);
+        let $ownerId = $(`<span class="ownerId">Owner ID: ${currentVehicle.owner_id}</span>`);
+        
+        $currentVehicleInfo.append($vehicleId, $vehicleColor, $licensePlate, $vehicleMake, $model, $year, $ownerId);
         $vehicleData.append($currentVehicleInfo);
         $currentVehicleInfo.append(currentVehicle);
     }
