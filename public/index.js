@@ -11,7 +11,7 @@ $vehicleUserForm.on('submit', async (event) => {
         const licensePlate = $('#vehicleSearch').val();
         const response = await $.get(`/api/vehicles/license/${licensePlate}`);
         const currentVehicle = response[0];
-        //for (const details of currentVehicle) {
+        
             let $currentVehicleInfo = $('<span class="currentVehicleInfo"></span>');
             let $vehicleId = $(`<span class="vehicleId">ID: ${currentVehicle.id} </span>`);
             let $vehicleColor = $(`<span class="vehicleColor">Color: ${currentVehicle.color} </span>`);
@@ -40,7 +40,7 @@ $ownerUserForm.on('submit', async (event) => {
         const ownerId = $('#ownerSearch').val();
         const response = await $.get(`/api/owners/${ownerId}`)
         const currentOwner = response[0];
-    
+
             let $currentOwnerInfo = $('<span class="currentOwnerInfo"></span>');
             let $id = $(`<span class="id">ID: ${currentOwner.id} </span>`);
             let $firstName = $(`<span class="firstName">First Name: ${currentOwner.firstname} </span>`);

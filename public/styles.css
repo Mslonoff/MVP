@@ -1,0 +1,25 @@
+body {
+    
+    padding: 4em;
+    background-color: beige;
+}
+#main {
+    display: grid;
+    place-items: center;
+}
+
+#vehicleSearch {
+    max-height: 1.5em;
+}
+
+
+
+#ownerUser-form {
+    display: flex;
+    max-height: 1.5em;
+}
+
+#vehicleUser-form {
+    display: flex;
+    max-height: 1.5em;
+}

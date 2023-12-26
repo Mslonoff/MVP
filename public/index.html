@@ -5,22 +5,31 @@
         <title>MVP</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script defer src="index.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Lines&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <h1>Welcome to the Hinsdale Police Department Vehicles Database</h1>
+        </header>
     <div id="main">
-        <h1>Welcome to the Hinsdale Police Department Vehicles Database</h1>
         <p>Please enter the vehicle's license plate below</p>
         <form id="vehicleUser-form">
             <input type="text" name="search" id="vehicleSearch">
             <button id="submit">Search</button>
         </form>
+        <div id="vehicleResults"></div>
         <p>Please enter the owner's ID number below</p>
         <form id="ownerUser-form">
             <input type="text" name="search" id="ownerSearch">
             <button id="submit">Search</button>
         </form>
-        <div id="vehicleResults"></div>
         <div id="ownerResults"></div>
     </div>
+    <footer>
+        <h3>© 2023 Slonoff</h3>
+    </footer>
     </body>
 </html>
