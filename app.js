@@ -37,6 +37,16 @@ app.get('/api/vehicles', (req, res) => { // good to go
     });
 });
 
+app.get('/api/license', (req, res) => { // trying to get all license plates
+    pool
+    .query('SELECT * FROM licenseplates')
+    .then((result) => res.status(201).send(result.rows))
+    .catch((error) => {
+        console.error(error);
+        res.status(500).send('Sorry your vehicles not found');
+    });
+});
+
 app.get('/api/owners', (req, res) => { // good to go
     pool
     .query('SELECT * FROM owners')

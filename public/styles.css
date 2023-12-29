@@ -3,16 +3,27 @@ body {
     padding: 4em;
     background-color: beige;
 }
+
+#logo {
+    height: 7em;
+    width: 7em;
+    float: right;
+}
 #main {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #vehicleSearch {
     max-height: 1.5em;
 }
 
-
+h1 {
+    font-family: 'Rubik Lines';
+    font-size: 30px;
+    text-align: center;
+}
 
 #ownerUser-form {
     display: flex;

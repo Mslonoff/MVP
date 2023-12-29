@@ -1,5 +1,7 @@
 DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS vehicles;
+DROP TABLE IF EXISTS licensePlates;
+
 
 CREATE TABLE owners (
     id serial PRIMARY KEY,
@@ -16,4 +18,9 @@ CREATE TABLE vehicles (
     licensePlate varchar(7),
     owner_id integer NOT NULL,
     FOREIGN KEY (owner_id) REFERENCES owners (id) ON DELETE CASCADE
-)
+);
+
+CREATE TABLE licensePlates (
+    id serial PRIMARY KEY,
+    license varchar(7)
+);
