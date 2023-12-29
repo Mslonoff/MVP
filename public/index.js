@@ -5,25 +5,38 @@ let $userSearch = $('#vehicleSearch');
 let $licensePlates = $('#licensePlates');
 let $allLicensePlates = $('#allLicensePlates');
 
+let hideForm = document.getElementById('licensePlates');
+let display = 0;
+
+function hideShow() {
+    if (display === 1) {
+        hideForm.style.display = 'block';
+        display = 0;
+    } else {
+        hideForm.style.display = 'none';
+        display = 1;
+    }
+}
+
 
 $licensePlates.on('submit', (event) => {
     event.preventDefault();
-    $licensePlates.empty();
+    //$licensePlates.empty();
 
     $.get('/api/license', (data) => {
-        console.log(data[0].license);
+        let allLicensePlates = data;
+        console.log('allLicensePlates:', allLicensePlates);
+        //console.log('first license plate: ', data[0].license);
 
-        for (let license of data) {
-            let currentLicense = data.license;
+        for (let license of allLicensePlates) {
+            //console.log('license:', license);
+            let currentLicense = license.license;
+            //console.log('currentLicense:', currentLicense);
 
-            let singleLicense = $(`<h6 class="license">${currentLicense.license}</h3>`);
+            let $currentLicense = $(`<h6 class="license">${currentLicense}</h3>`);
+            $allLicensePlates.append($currentLicense);
         }
-
-
-        $allLicensePlates.append(singleLicense);
-    }) 
-
-
+    })
 })
 
 $vehicleUserForm.on('submit', async (event) => {
@@ -32,13 +45,13 @@ $vehicleUserForm.on('submit', async (event) => {
     const licensePlate = $('#vehicleSearch').val();
     // console.log(licensePlate);
     // if the license plate entered is not a license plate in the database, return 'sorry no results'
-    if (licensePlate !== undefined) { 
+    if (licensePlate) {
         let $currentVehicleInfo = $('<span class="currentVehicleInfo"></span>');
-    try {
-        const response = await $.get(`/api/vehicles/license/${licensePlate}`);
-        console.log(response[0].licenseplate);
-        const currentVehicle = response[0];
-        console.log(currentVehicle);
+        try {
+          const response = await $.get(`/api/vehicles/license/${licensePlate}`);
+          console.log('license plate: ', response[0].licenseplate);
+          const currentVehicle = response[0];
+          console.log('current vehicle:', currentVehicle);
         
             let $vehicleId = $(`<span class="vehicleId">ID: ${currentVehicle.id} </span>`);
             let $vehicleColor = $(`<span class="vehicleColor">Color: ${currentVehicle.color} </span>`);
@@ -51,13 +64,14 @@ $vehicleUserForm.on('submit', async (event) => {
             $currentVehicleInfo.append($vehicleId, $vehicleColor, $licensePlate, $vehicleMake, $model, $year, $ownerId);
             $vehicleResults.append($currentVehicleInfo);
 
-    } catch (error) {
-        console.error(error);
+        } catch (error) {
+          console.error(error);
+        }
+    } else {
+      console.log('sorry no results found');
+      let $noResultsFound = $(`<span class="noResultsFound">ID: No Results Found</span>`);
+      $currentVehicleInfo.append($noResultsFound);
     }
-} else {
-    let $noResultsFound = $(`<span class="noResultsFound">ID: No Results Found</span>`);
-    $currentVehicleInfo.append($noResultsFound);
-}
 });
 
 let $ownerUserForm = $('#ownerUser-form');

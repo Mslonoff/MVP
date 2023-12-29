@@ -34,3 +34,7 @@ h1 {
     display: flex;
     max-height: 1.5em;
 }
+
+.footer {
+    grid-area: footer;
+}
