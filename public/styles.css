@@ -1,35 +1,94 @@
-body {
-padding: 4em;
-background-color: beige;
+::selection {
+    background-color: #ffcc00; /* Set the background color */
 }
 
-/*
+h1 {
+    color: white;
+    font-family: 'Rubik Lines';
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    padding: 0.5em;
+    background-color: rgb(74, 64, 64);
+}
+
+h3 {
+    color: white;
+    padding: 0.5em;
+    background-color: rgb(74, 64, 64);
+}
+
+h6 {
+    color: white;
+    padding: 0.1em;
+    background-color: rgb(74, 64, 64);
+}
+
+p {
+    color: white;
+    padding: 0.1em;
+    background-color: rgb(74, 64, 64);
+}
+
+.currentVehicleInfo {
+    color: white;
+    padding: 0.1em;
+    background-color: rgb(74, 64, 64);
+}
+
+.currentOwnerInfo {
+    color: white;
+    padding: 0.1em;
+    background-color: rgb(74, 64, 64);
+}
+
+body {
+    padding: 4em;
+    background-color: #0000cd;
+}
+
 #main {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-
-#ownerUser-form {
+/* #allLicensePlates {
     display: flex;
+    flex-direction: column;
     max-height: 1.5em;
-}
+} */
 
 #vehicleUser-form {
     display: flex;
+    flex-direction: column;
     max-height: 1.5em;
 }
-*/
+
+#vehicleResults {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 1.5em;
+}
+
+#ownerUser-form {
+    display: flex;
+    flex-direction: column;
+    max-height: 1.5em;
+}
+
+#ownerResults {
+    display: flex;
+    flex-direction: column;
+    max-height: 1.5em;
+}
+
+.footer {
+    align-items: flex-end;
+}
 
 #logo {
     height: 7em;
     width: 7em;
     float: right;
-}
-
-h1 {
-    font-family: 'Rubik Lines';
-    font-size: 30px;
-    text-align: center;
 }
