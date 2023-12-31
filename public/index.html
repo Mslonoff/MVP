@@ -18,11 +18,13 @@
             <img id="logo" src="https://pbs.twimg.com/profile_images/334927630/Police_Logo_400x400.jpg">
         </div>
     <div id="main">
+    <span id="allLicensePlates">
         <p>Click here to see all license plates in database</p>
-        <form id="licensePlates">
-            <button onclick="hideShow()">Hide/Show</button>
-        </form>
-        <div id="allLicensePlates"></div>
+        <div id="licensePlates">
+            <button id="licenses">Hide/Show</button>
+            <div id="allLicensePlatesContainer"></div>
+        </div>
+    </span>
         <p>Please enter the vehicle's license plate below</p>
         <form id="vehicleUser-form">
             <input type="text" name="search" id="vehicleSearch">

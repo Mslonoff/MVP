@@ -5,39 +5,44 @@ let $userSearch = $('#vehicleSearch');
 let $licensePlates = $('#licensePlates');
 let $allLicensePlates = $('#allLicensePlates');
 
-let hideForm = document.getElementById('licensePlates');
-let display = 0;
+// let hideForm = document.getElementById('licensePlates');
+// let display = 0;
 
-function hideShow() {
-    if (display === 1) {
-        hideForm.style.display = 'block';
-        display = 0;
-    } else {
-        hideForm.style.display = 'none';
-        display = 1;
-    }
-}
+// function hideShow() {
+//     if (display === 1) {
+//         hideForm.style.display = 'block';
+//         display = 0;
+//     } else {
+//         hideForm.style.display = 'none';
+//         display = 1;
+//     }
+// }
 
+const $licensePlatesContainer = $('#allLicensePlatesContainer');
+let isDataVisible = false;
 
-$licensePlates.on('submit', (event) => {
-    event.preventDefault();
-    //$licensePlates.empty();
+$('#licenses').on('click', async (event) => {
 
-    $.get('/api/license', (data) => {
-        let allLicensePlates = data;
-        console.log('allLicensePlates:', allLicensePlates);
-        //console.log('first license plate: ', data[0].license);
+    try {
+        if (isDataVisible) {
+            $licensePlatesContainer.empty();
+        } else {
+          const response = await $.get('/api/license');
+          const allLicensePlates = response.map(license => license.license);
+          console.log('allLicensePlates: ', allLicensePlates);
 
-        for (let license of allLicensePlates) {
-            //console.log('license:', license);
-            let currentLicense = license.license;
-            //console.log('currentLicense:', currentLicense);
-
-            let $currentLicense = $(`<h6 class="license">${currentLicense}</h3>`);
-            $allLicensePlates.append($currentLicense);
+          $licensePlatesContainer.empty();
+          
+          for (let currentLicense of allLicensePlates) {
+            const $currentLicense = $(`<h6 class="license">${currentLicense}</h3>`);
+            $licensePlatesContainer.append($currentLicense);
+          }
         }
-    })
-})
+        isDataVisible = !isDataVisible;
+    } catch (error) {
+        console.error( error);
+    }
+});
 
 $vehicleUserForm.on('submit', async (event) => {
     event.preventDefault();

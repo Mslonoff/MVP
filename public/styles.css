@@ -1,29 +1,15 @@
 body {
-    
-    padding: 4em;
-    background-color: beige;
+padding: 4em;
+background-color: beige;
 }
 
-#logo {
-    height: 7em;
-    width: 7em;
-    float: right;
-}
+/*
 #main {
     display: flex;
     flex-direction: column;
     
 }
 
-#vehicleSearch {
-    max-height: 1.5em;
-}
-
-h1 {
-    font-family: 'Rubik Lines';
-    font-size: 30px;
-    text-align: center;
-}
 
 #ownerUser-form {
     display: flex;
@@ -34,7 +20,16 @@ h1 {
     display: flex;
     max-height: 1.5em;
 }
+*/
 
-.footer {
-    grid-area: footer;
+#logo {
+    height: 7em;
+    width: 7em;
+    float: right;
+}
+
+h1 {
+    font-family: 'Rubik Lines';
+    font-size: 30px;
+    text-align: center;
 }
