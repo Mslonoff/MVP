@@ -40,7 +40,7 @@ $('#licenses').on('click', async (event) => {
         }
         isDataVisible = !isDataVisible;
     } catch (error) {
-        console.error( error);
+        console.error(error);
     }
 });
 // 
