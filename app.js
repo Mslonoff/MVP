@@ -8,19 +8,19 @@ const { Pool } = pg;
 const app = express();
 const expressPort = 8005;
 
-// const pool = new Pool({  // use this for local host
-//     user: "matthewslonoff",
-//     password: "slonoff4",
-//     host: 'localhost',
-//     database: 'vehiclesdb',
-//     port: 5432,
-// });
+const pool = new Pool({  // use this for local host
+    user: "matthewslonoff",
+    password: "slonoff4",
+    host: 'localhost',
+    database: 'vehiclesdb',
+    port: 5432,
+});
 
-const connectionString = process.env.PG_DATABASE_URL; // hide to prevent hacking? USE this for render
-console.log(connectionString);
-const pool = new Pool ({
-    connectionString,
-})
+// const connectionString = process.env.PG_DATABASE_URL; // hide to prevent hacking? USE this for render
+// console.log(connectionString);
+// const pool = new Pool ({
+//     connectionString,
+// })
 
 // middleware
 app.use(express.static('public'));

@@ -31,6 +31,8 @@ p {
 }
 
 .currentVehicleInfo {
+    display: flex;
+    flex-direction: column;
     color: white;
     padding: 0.5em;
     background-color: rgb(74, 64, 64);
@@ -49,8 +51,9 @@ body {
 
 #main {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
+    flex-grow: 4;
 }
 
 /* #allLicensePlates {
@@ -59,31 +62,97 @@ body {
     max-height: 1.5em;
 } */
 
+#licensePlateForm {
+    display: flex;
+    flex-direction: column;
+}
+
 #vehicleUser-form {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     max-height: 1.5em;
+    max-width: 15em;
+    padding: 1em;
 }
 
 #vehicleResults {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     max-height: 1.5em;
+    max-width: 15em;
+}
+
+.vehicleId {
+    padding: 1em;
+}
+
+.vehicleColor {
+    padding: 1em;
+}
+
+.licensePlate {
+    padding: 1em;
+}
+
+.vehicleMake {
+    padding: 1em;
+}
+
+.model {
+    padding: 1em;
+}
+
+.model {
+    padding: 1em;
+}
+
+.year {
+    padding: 1em;
+}
+
+.ownerId {
+    padding: 1em;
+}
+
+
+.currentOwnerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#ownerForm {
+    display: flex;
+    flex-direction: column;
 }
 
 #ownerUser-form {
     display: flex;
     flex-direction: column;
     max-height: 1.5em;
+    padding: 1em;
 }
 
 #ownerResults {
     display: flex;
     flex-direction: column;
     max-height: 1.5em;
+    max-width: 15em;
+}
+
+.id {
+    padding: 1em;
+}
+
+.firstName {
+    padding: 1em;
+}
+
+.lastName {
+    padding: 1em;
 }
 
 .footer {
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
