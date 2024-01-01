@@ -39,7 +39,7 @@ app.get('/api/vehicles', (req, res) => { // good to go
 
 app.get('/api/license', (req, res) => { // trying to get all license plates
     pool
-    .query('SELECT * FROM licenseplates')
+    .query('SELECT * FROM licensePlates')
     .then((result) => res.status(201).send(result.rows))
     .catch((error) => {
         console.error(error);
