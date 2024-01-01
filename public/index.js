@@ -34,6 +34,7 @@ $('#licenses').on('click', async (event) => {
           $licensePlatesContainer.empty();
           
           for (let currentLicense of allLicensePlates) {
+            console.log('currentLicense:', currentLicense);
             const $currentLicense = $(`<h6 class="license">${currentLicense}</h3>`);
             $licensePlatesContainer.append($currentLicense);
           }
