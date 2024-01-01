@@ -43,7 +43,7 @@ $('#licenses').on('click', async (event) => {
         console.error( error);
     }
 });
-
+// 
 $vehicleUserForm.on('submit', async (event) => {
     event.preventDefault();
     $vehicleResults.empty();
