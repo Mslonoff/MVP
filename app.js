@@ -15,7 +15,7 @@ const expressPort = 8005;
 //     database: 'vehiclesdb',
 //     port: 5432,
 // });
-
+//
 const connectionString = process.env.PG_DATABASE_URL; // hide to prevent hacking? USE this for render
 console.log(connectionString);
 const pool = new Pool ({
