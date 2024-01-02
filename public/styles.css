@@ -45,6 +45,9 @@ p {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 4em;
     background-color: #0000cd;
 }
@@ -152,8 +155,7 @@ body {
 }
 
 .footer {
-    justify-content: flex-end;
-    align-items: flex-end;
+    margin-top: auto;
 }
 
 #logo {
