@@ -22,7 +22,7 @@ const $licensePlatesContainer = $('#allLicensePlatesContainer');
 let isDataVisible = false;
 
 $('#licenses').on('click', async (event) => {
-
+//
     try {
         if (isDataVisible) {
             $licensePlatesContainer.empty();
