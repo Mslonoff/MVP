@@ -6,7 +6,7 @@ import 'dotenv/config';
 
 const { Pool } = pg;
 const app = express();
-const expressPort = 8005;
+const PORT = process.env.port || 8005;
 
 const pool = new Pool({  // use this for local host
     user: "matthewslonoff",
@@ -134,7 +134,7 @@ app.get('/api/owners/:id', (req, res) => { // good to go
 //     });
 // });
 
-app.listen(expressPort, () => {
-    console.log(`Listening on port ${expressPort}...`);
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}...`);
 });
 
