@@ -12,4 +12,4 @@ The purpose of this project was to demonstrate my new skills building an **Expre
 - HTML5
 - CSS
 - Render
-![Project Main Page](/home/matthewslonoff/React/MVP/public/images/policeDatabaseWebpage.png)
+![Project Main Page](/MVP/public/images/policeDatabaseWebpage.png)
